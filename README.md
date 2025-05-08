@@ -1,5 +1,7 @@
 # Popoen
 
+![alt text](image.png)
+
 Popoen is a minimal operating system written in Rust that implements a basic but functional kernel with essential features. It provides a foundation for learning OS development concepts through practical implementation.
 
 ## Features
