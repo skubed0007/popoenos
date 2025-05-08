@@ -65,10 +65,6 @@ impl Keyboard {
         unsafe { self.data_port.read() }
     }
 
-    pub fn init(&mut self) {
-        // Initialize the keyboard
-    }
-
     pub fn get_key(&mut self) -> Option<char> {
         while self.read_status() & 0x01 == 0 {}
 
@@ -130,9 +126,6 @@ pub fn init_keyboard() {
     let mut keyboard = KEYBOARD.lock();
     if keyboard.is_none() {
         *keyboard = Some(Keyboard::new());
-        if let Some(ref mut kb) = *keyboard {
-            kb.init();
-        }
     }
 }
 
